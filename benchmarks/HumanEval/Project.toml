@@ -1,0 +1,16 @@
+name = "HumanEval"
+uuid = "c27e8407-529f-4a77-9eb6-377bafdc2f54"
+authors = ["Jun Tian <tianjun.cpp@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+ReTestItems = "817f1d60-ba6b-4fd5-9520-3cf149f6a823"
+
+[targets]
+test = ["Test", "ReTestItems"]
