@@ -8,6 +8,7 @@ JuliaFormatter = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
 TestItemRunner = "f8b46487-2199-4994-9208-9a1283c18c0a"
 
 [compat]
+TestItemRunner = "0.2"
 julia = "1"
 
 [extras]
