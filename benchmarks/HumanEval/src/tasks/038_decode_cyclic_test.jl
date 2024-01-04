@@ -1,15 +1,8 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    from random import randint, choice
-    import string
-
-    letters = string.ascii_lowercase
-    for _ in range(100):
-        str = ''.join(choice(letters) for i in range(randint(10, 20)))
-        encoded_str = encode_cyclic(str)
-        @test candidate(encoded_str) == str
-
+@testitem "038_decode_cyclic.jl" begin
+    for _ in 1:100
+        using Random
+        rng = Random.MersenneTwister(123)
+        s = join((rand(rng, 'a':'z') for _ in 1:rand(rng, 10:20)))
+        @test decode_cyclic(HumanEval.encode_cyclic(s)) == s
+    end
+end

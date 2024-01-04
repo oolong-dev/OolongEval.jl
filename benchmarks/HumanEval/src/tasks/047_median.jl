@@ -1,14 +1,22 @@
+"""
+Return median of elements in the list l.
 
+# Examples
 
-def median(l: list):
-    """Return median of elements in the list l.
-    >>> median([3, 1, 2, 4, 5])
-    3
-    >>> median([-10, 4, 6, 1000, 10, 20])
-    15.0
-    """
+```jldoctest
+julia> median([3, 1, 2, 4, 5])
+3
+
+julia> median([-10, 4, 6, 1000, 10, 20])
+15.0
+```
+"""
+function median(l::Vector)
     l = sorted(l)
-    if len(l) % 2 == 1:
-        return l[len(l) // 2]
-    else:
-        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0
+    d, r = divrem(length(l), 2)
+    if r == 1
+        l[d + 1]
+    else
+        return (l[d] + l[d+1]) / 2
+    end
+end

@@ -1,32 +1,42 @@
+"""
+Returns n-th number that is a Fibonacci number and it's also prime.
 
+```jldoctest
+julia> prime_fib(1)
+2
 
-def prime_fib(n: int):
-    """
-    prime_fib returns n-th number that is a Fibonacci number and it's also prime.
-    >>> prime_fib(1)
-    2
-    >>> prime_fib(2)
-    3
-    >>> prime_fib(3)
-    5
-    >>> prime_fib(4)
-    13
-    >>> prime_fib(5)
-    89
-    """
-    import math
+julia> prime_fib(2)
+3
 
-    def is_prime(p):
-        if p < 2:
-            return False
-        for k in range(2, min(int(math.sqrt(p)) + 1, p - 1)):
-            if p % k == 0:
-                return False
-        return True
+julia> prime_fib(3)
+5
+
+julia> prime_fib(4)
+13
+
+julia> prime_fib(5)
+89
+```
+"""
+function prime_fib(n::Int)::Int
+    function is_prime(n::Int)
+        n < 2 && return false
+        for k in 2:n-2
+            if n % k == 0
+                return false
+            end
+        end
+        return true
+    end
+
     f = [0, 1]
-    while True:
-        f.append(f[-1] + f[-2])
-        if is_prime(f[-1]):
+    while true
+        push!(f, f[end] + f[end-1])
+        if is_prime(f[end])
             n -= 1
-        if n == 0:
+        end
+        if n == 0
             return f[-1]
+        end
+    end
+end

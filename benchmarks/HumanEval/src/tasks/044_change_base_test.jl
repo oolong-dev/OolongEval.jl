@@ -1,15 +1,12 @@
+@testitem "044_change_base.jl" begin
+    @test change_base(8, 3) == "22"
+    @test change_base(9, 3) == "100"
+    @test change_base(234, 2) == "11101010"
+    @test change_base(16, 2) == "10000"
+    @test change_base(8, 2) == "1000"
+    @test change_base(7, 2) == "111"
 
-
-METADATA = {}
-
-
-def check(candidate):
-    @test candidate(8, 3) == "22"
-    @test candidate(9, 3) == "100"
-    @test candidate(234, 2) == "11101010"
-    @test candidate(16, 2) == "10000"
-    @test candidate(8, 2) == "1000"
-    @test candidate(7, 2) == "111"
-    for x in range(2, 8):
-        @test candidate(x, x + 1) == str(x)
-
+    for x in 2:7
+        @test change_base(x, x + 1) == string(x)
+    end
+end

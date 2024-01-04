@@ -1,11 +1,6 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    @test candidate(5) == 4
-    @test candidate(8) == 28
-    @test candidate(10) == 104
-    @test candidate(12) == 386
-
+@testitem "046_fib4.jl" begin
+    @test fib4(5) == 4
+    @test fib4(8) == 28
+    @test fib4(10) == 104
+    @test fib4(12) == 386
+end

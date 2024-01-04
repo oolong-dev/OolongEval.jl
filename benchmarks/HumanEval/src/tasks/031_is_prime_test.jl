@@ -1,20 +1,15 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    @test candidate(6) == False
-    @test candidate(101) == True
-    @test candidate(11) == True
-    @test candidate(13441) == True
-    @test candidate(61) == True
-    @test candidate(4) == False
-    @test candidate(1) == False
-    @test candidate(5) == True
-    @test candidate(11) == True
-    @test candidate(17) == True
-    @test candidate(5 * 17) == False
-    @test candidate(11 * 7) == False
-    @test candidate(13441 * 19) == False
-
+@testitem "031_is_prime.jl" begin
+    @test is_prime(6) == false
+    @test is_prime(101) == true
+    @test is_prime(11) == true
+    @test is_prime(13441) == true
+    @test is_prime(61) == true
+    @test is_prime(4) == false
+    @test is_prime(1) == false
+    @test is_prime(5) == true
+    @test is_prime(11) == true
+    @test is_prime(17) == true
+    @test is_prime(5 * 17) == false
+    @test is_prime(11 * 7) == false
+    @test is_prime(13441 * 19) == false
+end

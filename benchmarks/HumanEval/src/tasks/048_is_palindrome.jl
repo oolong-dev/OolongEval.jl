@@ -1,18 +1,27 @@
+"""
+Checks if given string is a palindrome
 
+# Examples
 
-def is_palindrome(text: str):
-    """
-    Checks if given string is a palindrome
-    >>> is_palindrome('')
-    True
-    >>> is_palindrome('aba')
-    True
-    >>> is_palindrome('aaaaa')
-    True
-    >>> is_palindrome('zbcd')
-    False
-    """
-    for i in range(len(text)):
-        if text[i] != text[len(text) - 1 - i]:
-            return False
-    return True
+```jldoctest
+julia> is_palindrome("")
+true
+
+julia> is_palindrome("aba")
+true
+
+julia> is_palindrome("aaaaa")
+true
+
+julia> is_palindrome("zbcd")
+false
+```
+"""
+function is_palindrome(text::String)::Bool
+    for i in 1:(length(text) ÷ 2)
+        if text[i] != text[end+1-i]
+            return false
+        end
+    end
+    return true
+end

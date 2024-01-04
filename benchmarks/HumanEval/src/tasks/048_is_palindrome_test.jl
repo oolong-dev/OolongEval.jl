@@ -1,14 +1,9 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    @test candidate('') == True
-    @test candidate('aba') == True
-    @test candidate('aaaaa') == True
-    @test candidate('zbcd') == False
-    @test candidate('xywyx') == True
-    @test candidate('xywyz') == False
-    @test candidate('xywzx') == False
-
+@testitem "048_is_palindrome.jl" begin
+    @test is_palindrome("") == true
+    @test is_palindrome("aba") == true
+    @test is_palindrome("aaaaa") == true
+    @test is_palindrome("zbcd") == false
+    @test is_palindrome("xywyx") == true
+    @test is_palindrome("xywyz") == false
+    @test is_palindrome("xywzx") == false
+end

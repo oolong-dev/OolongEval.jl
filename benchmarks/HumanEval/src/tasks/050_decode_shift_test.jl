@@ -1,16 +1,8 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    from random import randint, choice
-    import copy
-    import string
-
-    letters = string.ascii_lowercase
-    for _ in range(100):
-        str = ''.join(choice(letters) for i in range(randint(10, 20)))
-        encoded_str = encode_shift(str)
-        @test candidate(copy.deepcopy(encoded_str)) == str
-
+@testitem "050_decode_shift.jl" begin
+    for _ in 1:100:
+        rng = Random.MersenneTwister(123)
+        s = join((rand(rng, 'a':'z') for n in 1:rand(rng, 10:20)))
+        encoded_s = HumanEval.encode_shift(s)
+        @test decode_shift(encoded_s) == s
+    end
+end
