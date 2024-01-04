@@ -1,12 +1,5 @@
-
-
-METADATA = {
-    'author': 'jt',
-    'dataset': 'test'
-}
-
-
-def check(candidate):
-    @test candidate('') == 0
-    @test candidate('x') == 1
-    @test candidate('asdasnakj') == 9
+@testitem "023_strlen.jl" begin
+    @test strlen("") == 0
+    @test strlen("x") == 1
+    @test strlen("asdasnakj") == 9
+end

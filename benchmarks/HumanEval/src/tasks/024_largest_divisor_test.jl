@@ -1,14 +1,7 @@
-
-
-METADATA = {
-    'author': 'jt',
-    'dataset': 'test'
-}
-
-
-def check(candidate):
-    @test candidate(3) == 1
-    @test candidate(7) == 1
-    @test candidate(10) == 5
-    @test candidate(100) == 50
-    @test candidate(49) == 7
+@testitem "024_largest_divisor.jl" begin
+    @test largest_divisor(3) == 1
+    @test largest_divisor(7) == 1
+    @test largest_divisor(10) == 5
+    @test largest_divisor(100) == 50
+    @test largest_divisor(49) == 7
+end

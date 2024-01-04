@@ -1,11 +1,16 @@
-from typing import List
+"""
+Concatenate list of strings into a single string.
 
+# Examples
 
-def concatenate(strings: List[str]) -> str:
-    """ Concatenate list of strings into a single string
-    >>> concatenate([])
-    ''
-    >>> concatenate(['a', 'b', 'c'])
-    'abc'
-    """
-    return ''.join(strings)
+```jldoctest
+julia> concatenate([])
+""
+
+julia> concatenate(["a", "b", "c"])
+"abc"
+```
+"""
+function concatenate(xs::Vector{String})::String
+    join(xs)
+end

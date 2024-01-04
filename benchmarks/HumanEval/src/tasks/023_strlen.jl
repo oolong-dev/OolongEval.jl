@@ -1,10 +1,16 @@
+"""
+Return length of given string.
 
+# Examples
 
-def strlen(string: str) -> int:
-    """ Return length of given string
-    >>> strlen('')
-    0
-    >>> strlen('abc')
-    3
-    """
-    return len(string)
+```jldoctest
+julia> strlen('')
+0
+
+julia> strlen("abc")
+3
+```
+"""
+function strlen(x::String)::Int
+    return length(x)
+end
