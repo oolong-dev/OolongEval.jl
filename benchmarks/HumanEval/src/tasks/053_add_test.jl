@@ -1,18 +1,12 @@
+@testitem "053_add.jl" begin
+    @test add(0, 1) == 1
+    @test add(1, 0) == 1
+    @test add(2, 3) == 5
+    @test add(5, 7) == 12
+    @test add(7, 5) == 12
 
-
-METADATA = {}
-
-
-def check(candidate):
-    import random
-
-    @test candidate(0, 1) == 1
-    @test candidate(1, 0) == 1
-    @test candidate(2, 3) == 5
-    @test candidate(5, 7) == 12
-    @test candidate(7, 5) == 12
-
-    for i in range(100):
-        x, y = random.randint(0, 1000), random.randint(0, 1000)
-        @test candidate(x, y) == x + y
-
+    for i in range(100)
+        x, y = rand(0:1000), rand(0:1000)
+        @test add(x, y) == x + y
+    end
+end

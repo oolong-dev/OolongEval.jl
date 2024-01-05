@@ -1,12 +1,7 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    @test candidate(1) == 1
-    @test candidate(6) == 21
-    @test candidate(11) == 66
-    @test candidate(30) == 465
-    @test candidate(100) == 5050
-
+@testitem "060_sum_to_n.jl" begin
+    @test sum_to_n(1) == 1
+    @test sum_to_n(6) == 21
+    @test sum_to_n(11) == 66
+    @test sum_to_n(30) == 465
+    @test sum_to_n(100) == 5050
+end

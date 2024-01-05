@@ -1,14 +1,9 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    @test candidate('') == ''
-    @test candidate("abcdef\nghijklm") == 'bcdf\nghjklm'
-    @test candidate('fedcba') == 'fdcb'
-    @test candidate('eeeee') == ''
-    @test candidate('acBAA') == 'cB'
-    @test candidate('EcBOO') == 'cB'
-    @test candidate('ybcd') == 'ybcd'
-
+@testitem "051_remove_vowels.jl" begin
+    @test remove_vowels("") == ""
+    @test remove_vowels("abcdef\nghijklm") == "bcdf\nghjklm"
+    @test remove_vowels("fedcba") == "fdcb"
+    @test remove_vowels("eeeee") == ""
+    @test remove_vowels("acBAA") == "cB"
+    @test remove_vowels("EcBOO") == "cB"
+    @test remove_vowels("ybcd") == "ybcd"
+end

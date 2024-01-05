@@ -1,19 +1,28 @@
+"""
+Check if two words have the same characters.
 
+# Examples
 
-def same_chars(s0: str, s1: str):
-    """
-    Check if two words have the same characters.
-    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')
-    True
-    >>> same_chars('abcd', 'dddddddabc')
-    True
-    >>> same_chars('dddddddabc', 'abcd')
-    True
-    >>> same_chars('eabcd', 'dddddddabc')
-    False
-    >>> same_chars('abcd', 'dddddddabce')
-    False
-    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')
-    False
-    """
-    return set(s0) == set(s1)
+```jldoctest
+julia> same_chars("eabcdzzzz", "dddzzzzzzzddeddabc")
+true
+
+julia> same_chars("abcd", "dddddddabc")
+true
+
+julia> same_chars("dddddddabc", "abcd")
+true
+
+julia> same_chars("eabcd", "dddddddabc")
+false
+
+julia> same_chars("abcd", "dddddddabce")
+false
+
+julia> same_chars("eabcdzzzz", "dddzzzzzzzddddabc")
+false
+```
+"""
+function same_chars(s0::String, s1::String)
+    return Set(s0) == Set(s1)
+end
