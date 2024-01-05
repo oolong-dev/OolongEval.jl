@@ -1,14 +1,9 @@
-
-
-METADATA = {}
-
-
-def check(candidate):
-    @test candidate('eabcdzzzz', 'dddzzzzzzzddeddabc') == True
-    @test candidate('abcd', 'dddddddabc') == True
-    @test candidate('dddddddabc', 'abcd') == True
-    @test candidate('eabcd', 'dddddddabc') == False
-    @test candidate('abcd', 'dddddddabcf') == False
-    @test candidate('eabcdzzzz', 'dddzzzzzzzddddabc') == False
-    @test candidate('aabb', 'aaccc') == False
-
+@test "054_same_chars.jl" begin
+    @test same_chars("eabcdzzzz", "dddzzzzzzzddeddabc") == true
+    @test same_chars("abcd", "dddddddabc") == true
+    @test same_chars("dddddddabc", "abcd") == true
+    @test same_chars("eabcd", "dddddddabc") == false
+    @test same_chars("abcd", "dddddddabcf") == false
+    @test same_chars("eabcdzzzz", "dddzzzzzzzddddabc") == false
+    @test same_chars("aabb", "aaccc") == false
+end
